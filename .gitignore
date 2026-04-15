@@ -1,0 +1,10 @@
+node_modules
+.next
+.env
+dist
+coverage
+prisma/dev.db
+*.log
+storage/attempts.json
+storage/leads.json
+storage/hogwarts_edu.sqlite

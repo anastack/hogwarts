@@ -1,0 +1,7 @@
+node_modules
+.next
+.env
+*.log
+storage/attempts.json
+storage/leads.json
+storage/hogwarts_edu.sqlite

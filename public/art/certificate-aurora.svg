@@ -1,0 +1,12 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" rx="28" fill="#0A1020"/>
+  <rect x="30" y="30" width="1340" height="840" rx="24" fill="#F1E4C2"/>
+  <rect x="58" y="58" width="1284" height="784" rx="18" fill="#F8EED4" stroke="#A77B2D" stroke-width="3"/>
+  <text x="700" y="166" text-anchor="middle" fill="#6F1D34" font-size="48" font-family="Georgia, serif">АКАДЕМИЧЕСКИЙ СЕРТИФИКАТ</text>
+  <text x="700" y="246" text-anchor="middle" fill="#17233B" font-size="86" font-family="Georgia, serif">128 БАЛЛОВ</text>
+  <text x="700" y="322" text-anchor="middle" fill="#7C6740" font-size="34" font-family="Georgia, serif">Пробный ЕНТ • HOGWARTS</text>
+  <rect x="162" y="404" width="1076" height="250" rx="22" fill="#FFF8E6" stroke="#D6B56A" stroke-dasharray="10 10"/>
+  <text x="700" y="500" text-anchor="middle" fill="#17233B" font-size="54" font-family="Georgia, serif">Аружан М.</text>
+  <text x="700" y="570" text-anchor="middle" fill="#6F1D34" font-size="38" font-family="Georgia, serif">Computer Science • NU</text>
+  <text x="700" y="720" text-anchor="middle" fill="#17233B" font-size="28" font-family="Georgia, serif">С 92 до 128 за один сезон подготовки</text>
+</svg>

@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SubjectKind {
+  CORE
+  PROFILE
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  COMPLETED
+  EXPIRED
+}
+
+model Subject {
+  id           String              @id @default(cuid())
+  name         String              @unique
+  slug         String              @unique
+  kind         SubjectKind
+  icon         String?
+  description  String?
+  questions    Question[]
+  answers      TestAttemptAnswer[]
+  profileLinks ProfileSubject[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+}
+
+model Profile {
+  id            String         @id @default(cuid())
+  name          String         @unique
+  slug          String         @unique
+  description   String
+  tagline       String?
+  accent        String?
+  crestImage    String?
+  studentsCount Int            @default(0)
+  successMetric String?
+  subjects      ProfileSubject[]
+  certificates  Certificate[]
+  attempts      TestAttempt[]
+  leads         Lead[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model ProfileSubject {
+  profileId String
+  subjectId String
+  order     Int     @default(0)
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, subjectId])
+}
+
+model Question {
+  id          String         @id @default(cuid())
+  prompt      String         @db.Text
+  imageUrl    String?
+  explanation String?        @db.Text
+  isActive    Boolean        @default(true)
+  sortOrder   Int            @default(0)
+  subjectId   String
+  subject     Subject        @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  options     AnswerOption[]
+  answers     TestAttemptAnswer[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model AnswerOption {
+  id              String              @id @default(cuid())
+  questionId      String
+  text            String              @db.Text
+  imageUrl        String?
+  isCorrect       Boolean             @default(false)
+  sortOrder       Int                 @default(0)
+  question        Question            @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedAnswers TestAttemptAnswer[] @relation("SelectedOption")
+}
+
+model Teacher {
+  id           String   @id @default(cuid())
+  name         String
+  subject      String
+  title        String
+  bio          String   @db.Text
+  achievements String[]
+  photoUrl     String
+  accent       String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Certificate {
+  id          String   @id @default(cuid())
+  studentName String
+  score       Int
+  university  String
+  program     String
+  imageUrl    String
+  highlight   String
+  profileId   String?
+  profile     Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+}
+
+model TestAttempt {
+  id               String              @id @default(cuid())
+  profileId        String
+  profile          Profile             @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  durationSeconds  Int
+  totalQuestions   Int
+  score            Int                 @default(0)
+  correctCount     Int                 @default(0)
+  wrongCount       Int                 @default(0)
+  status           AttemptStatus       @default(IN_PROGRESS)
+  subjectBreakdown Json?
+  startedAt        DateTime            @default(now())
+  completedAt      DateTime?
+  answers          TestAttemptAnswer[]
+}
+
+model TestAttemptAnswer {
+  id               String        @id @default(cuid())
+  attemptId        String
+  questionId       String
+  subjectId        String
+  selectedOptionId String?
+  isCorrect        Boolean       @default(false)
+  attempt          TestAttempt   @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question         Question      @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  subject          Subject       @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  selectedOption   AnswerOption? @relation("SelectedOption", fields: [selectedOptionId], references: [id], onDelete: SetNull)
+
+  @@unique([attemptId, questionId])
+}
+
+model Lead {
+  id         String   @id @default(cuid())
+  name       String
+  phone      String
+  classLevel String
+  city       String
+  entProfile String
+  comment    String?
+  source     String   @default("landing")
+  status     String   @default("NEW")
+  profileId  String?
+  profile    Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  createdAt  DateTime @default(now())
+}

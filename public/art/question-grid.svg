@@ -1,0 +1,9 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="24" fill="#0E1628"/>
+  <path d="M240 560C240 384 384 240 560 240H720C816 240 896 320 896 416V480" stroke="#D6B56A" stroke-width="10"/>
+  <path d="M314 560H886" stroke="#D6B56A" stroke-width="10"/>
+  <path d="M560 240L720 560" stroke="#D6B56A" stroke-width="8" stroke-dasharray="14 14"/>
+  <circle cx="560" cy="240" r="18" fill="#F4E8C8"/>
+  <circle cx="720" cy="560" r="18" fill="#F4E8C8"/>
+  <text x="600" y="118" text-anchor="middle" fill="#F4E8C8" font-size="42" font-family="Georgia, serif">ГРАФИК И СЕТКА</text>
+</svg>

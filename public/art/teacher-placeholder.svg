@@ -1,0 +1,24 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="36" fill="#0A1020"/>
+  <rect x="36" y="36" width="828" height="1028" rx="28" fill="url(#bg)"/>
+  <path d="M450 310C534.5 310 603 241.5 603 157C603 72.5 534.5 4 450 4C365.5 4 297 72.5 297 157C297 241.5 365.5 310 450 310Z" fill="url(#face)" transform="translate(0 140)"/>
+  <path d="M226 790C226 659.662 331.662 554 462 554H438C568.338 554 674 659.662 674 790V832H226V790Z" fill="#16213E"/>
+  <rect x="122" y="882" width="656" height="104" rx="16" fill="#0E1628" stroke="#D6B56A" stroke-opacity="0.45"/>
+  <text x="450" y="930" text-anchor="middle" fill="#F4E8C8" font-size="46" font-family="Georgia, serif">ЗДЕСЬ БУДЕТ</text>
+  <text x="450" y="976" text-anchor="middle" fill="#D6B56A" font-size="40" font-family="Georgia, serif">ФОТО ПРЕПОДАВАТЕЛЯ</text>
+  <circle cx="744" cy="186" r="54" fill="#D6B56A" fill-opacity="0.14"/>
+  <circle cx="744" cy="186" r="22" fill="#D6B56A" fill-opacity="0.35"/>
+  <circle cx="152" cy="208" r="12" fill="#F4E8C8" fill-opacity="0.4"/>
+  <circle cx="190" cy="174" r="8" fill="#F4E8C8" fill-opacity="0.2"/>
+  <defs>
+    <linearGradient id="bg" x1="450" y1="36" x2="450" y2="1064" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24122B"/>
+      <stop offset="0.55" stop-color="#101729"/>
+      <stop offset="1" stop-color="#090D15"/>
+    </linearGradient>
+    <linearGradient id="face" x1="450" y1="144" x2="450" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6B56A"/>
+      <stop offset="1" stop-color="#8E6A2B"/>
+    </linearGradient>
+  </defs>
+</svg>

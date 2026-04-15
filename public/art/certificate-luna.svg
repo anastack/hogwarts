@@ -1,0 +1,13 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" rx="28" fill="#081120"/>
+  <rect x="36" y="36" width="1328" height="828" rx="22" fill="#F5E8C5"/>
+  <rect x="76" y="76" width="1248" height="748" rx="18" fill="#FFF8E3" stroke="#D6B56A" stroke-width="4"/>
+  <path d="M194 194L1206 706" stroke="#19233B" stroke-opacity="0.08" stroke-width="8"/>
+  <path d="M1206 194L194 706" stroke="#19233B" stroke-opacity="0.08" stroke-width="8"/>
+  <text x="700" y="180" text-anchor="middle" fill="#6F1D34" font-size="40" font-family="Georgia, serif">СЕРТИФИКАТ ДОСТИЖЕНИЯ</text>
+  <text x="700" y="292" text-anchor="middle" fill="#19233B" font-size="92" font-family="Georgia, serif">117</text>
+  <text x="700" y="352" text-anchor="middle" fill="#6F1D34" font-size="34" font-family="Georgia, serif">баллов • HOGWARTS</text>
+  <text x="700" y="504" text-anchor="middle" fill="#19233B" font-size="56" font-family="Georgia, serif">Айгерим С.</text>
+  <text x="700" y="570" text-anchor="middle" fill="#6F1D34" font-size="32" font-family="Georgia, serif">International Relations • ENU</text>
+  <text x="700" y="704" text-anchor="middle" fill="#19233B" font-size="28" font-family="Georgia, serif">Сильный рост в истории и чтении</text>
+</svg>
